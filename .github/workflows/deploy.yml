@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # Add this line to ensure write permissions
+
 jobs:
   build:
     name: Build
@@ -16,6 +19,8 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Specify Node version
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
